@@ -25,7 +25,7 @@ A few things I'm comfortable with:
 
 - Bare-metal driver development for GPIO, SPI, I2C, and USART, written without a vendor HAL
 - Real-time firmware on FreeRTOS — tasks, priorities, queues, semaphores, and ISR-safe design
-- Linux internals — character device drivers, kernel modules, and the user/kernel-space boundary
+- Linux internals — character device drivers, kernel modules, and upstream contributions (an IIO sensor-driver bug fix + staging cleanups merged to mainline)
 - IoT systems end to end, from an ESP8266 collecting sensor data to an MQTT dashboard
 - Unit testing, coverage, and continuous integration
 
@@ -41,14 +41,21 @@ A few things I'm comfortable with:
 
 ## Open source
 
-**Linux kernel** — `drivers/staging` cleanup patches, authored and merged into the mainline
-tree (accepted via Greg Kroah-Hartman's staging tree):
+### Linux kernel
+
+**Bug fix — IIO (pressure sensors):** `iio: pressure: dps310: fix NULL pointer dereference
+on ACPI probe` — fixed a kernel crash during probe when the DPS310 is enumerated via its
+ACPI HID (the i2c device-id lookup returned NULL and was dereferenced). Reviewed by the IIO
+maintainers, applied to the IIO subsystem tree, and marked for stable backport.
+[Patch on lore.kernel.org](https://lore.kernel.org/all/20260719000752.75936-1-zoone.rupert@gmail.com/)
+
+**`drivers/staging` cleanups — merged to mainline:**
 - [`d5c28c0`](https://github.com/torvalds/linux/commit/d5c28c0db2ef88132e4502108cac726bac1ab715) — `staging: sm750: rename CamelCase variable Bpp to bpp`
 - [`e6900ce`](https://github.com/torvalds/linux/commit/e6900ce28cd312f8872ed3794b3e5e12fe911ecd) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtw_ap.c)
 - [`d9c2a00`](https://github.com/torvalds/linux/commit/d9c2a003912044b8adb695223c2a8ceb3b0bdf2d) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtl8723b_hal_init.c)
 
-**Zephyr RTOS** — [PR #114097](https://github.com/zephyrproject-rtos/zephyr/pull/114097): a
-documentation fix in the Getting Started guide.
+### Zephyr RTOS
+- [PR #114097](https://github.com/zephyrproject-rtos/zephyr/pull/114097) — documentation fix in the Getting Started guide.
 
 ## Tools I reach for
 
