@@ -39,6 +39,17 @@ A few things I'm comfortable with:
 | [linux_device_driver](https://github.com/ryantra/linux_device_driver) | Linux kernel modules and a character device driver with dynamic major/minor allocation |
 | [Parallel-Computing](https://github.com/ryantra/Parallel-Computing) | Optimizing a physics engine with OpenMP and OpenCL — up to a 34x speedup |
 
+## Open source
+
+**Linux kernel** — `drivers/staging` cleanup patches, authored and merged into the mainline
+tree (accepted via Greg Kroah-Hartman's staging tree):
+- [`d5c28c0`](https://github.com/torvalds/linux/commit/d5c28c0db2ef88132e4502108cac726bac1ab715) — `staging: sm750: rename CamelCase variable Bpp to bpp`
+- [`e6900ce`](https://github.com/torvalds/linux/commit/e6900ce28cd312f8872ed3794b3e5e12fe911ecd) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtw_ap.c)
+- [`d9c2a00`](https://github.com/torvalds/linux/commit/d9c2a003912044b8adb695223c2a8ceb3b0bdf2d) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtl8723b_hal_init.c)
+
+**Zephyr RTOS** — [PR #114097](https://github.com/zephyrproject-rtos/zephyr/pull/114097): a
+documentation fix in the Getting Started guide.
+
 ## Tools I reach for
 
 ![C](https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white)
