@@ -50,10 +50,7 @@ ACPI HID (the i2c device-id lookup returned NULL and was dereferenced). Reviewed
 maintainers, applied to the IIO subsystem tree, and marked for stable backport.
 [Patch on lore.kernel.org](https://lore.kernel.org/all/20260719000752.75936-1-zoone.rupert@gmail.com/)
 
-**`drivers/staging` cleanups — merged to mainline:**
-- [`d5c28c0`](https://github.com/torvalds/linux/commit/d5c28c0db2ef88132e4502108cac726bac1ab715) — `staging: sm750: rename CamelCase variable Bpp to bpp`
-- [`e6900ce`](https://github.com/torvalds/linux/commit/e6900ce28cd312f8872ed3794b3e5e12fe911ecd) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtw_ap.c)
-- [`d9c2a00`](https://github.com/torvalds/linux/commit/d9c2a003912044b8adb695223c2a8ceb3b0bdf2d) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtl8723b_hal_init.c)
+**`drivers/staging` cleanups:** three checkpatch-style patches merged to the Linux staging tree — a CamelCase rename in sm750 ([`d5c28c0`](https://github.com/torvalds/linux/commit/d5c28c0db2ef88132e4502108cac726bac1ab715)) and `shortGIrate` to `short_gi_rate` in rtl8723bs ([`e6900ce`](https://github.com/torvalds/linux/commit/e6900ce28cd312f8872ed3794b3e5e12fe911ecd), [`d9c2a00`](https://github.com/torvalds/linux/commit/d9c2a003912044b8adb695223c2a8ceb3b0bdf2d)). My first upstream kernel contributions.
 
 ### Zephyr RTOS
 
