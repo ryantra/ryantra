@@ -25,6 +25,7 @@ A few things I'm comfortable with:
 
 - Bare-metal driver development for GPIO, SPI, I2C, and USART, written without a vendor HAL
 - Real-time firmware on FreeRTOS — tasks, priorities, queues, semaphores, and ISR-safe design
+- Zephyr RTOS — sensor-driver work with an upstream bug fix merged to mainline, plus devicetree and Kconfig
 - Linux internals — character device drivers, kernel modules, and upstream contributions (an IIO sensor-driver bug fix + staging cleanups merged to mainline)
 - IoT systems end to end, from an ESP8266 collecting sensor data to an MQTT dashboard
 - Unit testing, coverage, and continuous integration
@@ -55,7 +56,20 @@ maintainers, applied to the IIO subsystem tree, and marked for stable backport.
 - [`d9c2a00`](https://github.com/torvalds/linux/commit/d9c2a003912044b8adb695223c2a8ceb3b0bdf2d) — `staging: rtl8723bs: rename shortGIrate to short_gi_rate` (rtl8723b_hal_init.c)
 
 ### Zephyr RTOS
-- [PR #114097](https://github.com/zephyrproject-rtos/zephyr/pull/114097) — documentation fix in the Getting Started guide.
+
+**Driver bug fix — BMI270 IMU:** `drivers: sensor: bmi270: guard any-motion against
+missing feature set` — the driver silently failed to configure any-motion interrupts when
+the default (max_fifo) feature set left the any-motion register pointers NULL. On Cortex-M,
+address 0 is writable, so the write landed on an unintended feature page and returned false
+success, leaving the trigger a no-op. The fix validates the feature set up front and returns
+`-ENOTSUP` with a clear log message. Reviewed by Zephyr maintainers and merged to mainline.
+[PR #114134](https://github.com/zephyrproject-rtos/zephyr/pull/114134) (fixes #112938)
+
+**Credential:** [Zephyr Technical Contributor](https://www.credly.com/badges/86949fb0-6068-4c9b-89ab-95f6b2cfbba9/public_url) — official badge
+issued by The Linux Foundation (July 2026) for code and documentation contributors to the
+Zephyr Project.
+
+- Earlier: [PR #114097](https://github.com/zephyrproject-rtos/zephyr/pull/114097) — documentation fix in the Getting Started guide.
 
 ## Tools I reach for
 
@@ -65,6 +79,7 @@ maintainers, applied to the IIO subsystem tree, and marked for stable backport.
 ![STM32](https://img.shields.io/badge/STM32-03234B?style=flat&logo=stmicroelectronics&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 ![FreeRTOS](https://img.shields.io/badge/FreeRTOS-009900?style=flat&logo=freertos&logoColor=white)
+![Zephyr](https://img.shields.io/badge/Zephyr_RTOS-7929D2?style=flat&logo=zephyrproject&logoColor=white)
 ![ESP8266](https://img.shields.io/badge/ESP8266-E7352C?style=flat&logo=espressif&logoColor=white)
 ![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat&logo=mqtt&logoColor=white)
 ![Node-RED](https://img.shields.io/badge/Node--RED-8F0000?style=flat&logo=nodered&logoColor=white)
