@@ -38,7 +38,7 @@ A few things I'm comfortable with:
 | [FreeRTOS](https://github.com/ryantra/FreeRTOS) | Nine progressive RTOS labs: tasks, priorities, queues, timers, semaphores, notifications |
 | [IoT-Soilless-Hydroponic-System](https://github.com/ryantra/IoT-Soilless-Hydroponic-System) | A smart-farm prototype: ESP8266 to MQTT to Raspberry Pi to a Node-RED dashboard |
 | [linux_device_driver](https://github.com/ryantra/linux_device_driver) | Linux kernel modules and a character device driver with dynamic major/minor allocation |
-| [Parallel-Computing](https://github.com/ryantra/Parallel-Computing) | Optimizing a physics engine with OpenMP and OpenCL — up to a 34x speedup |
+| [Parallel-Computing](https://github.com/ryantra/Parallel-Computing) | Parallelizing a physics simulation with OpenMP and OpenCL — about 7.8x on the GPU stage over the optimized CPU version |
 
 ## Open source
 
